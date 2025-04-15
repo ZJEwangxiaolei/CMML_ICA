@@ -36,36 +36,33 @@ This model follows an iterative approach based-on time steps where cells (the "a
 
 ## Description of Each Python File
 
-### 1. **abm_ec_simulation.py** (Main Simulation Script)
-   - Runs the simulation by calling helper functions for flow computation, migration, and visualization.
-   - Uses a loop to update the model over multiple time steps.
 
-### 2. **abm_ec_simulation_v2.py** (Updated Simulation with Branching Rules)
+### 1. **abm_ec_simulation_v2.py** (Updated Simulation with Branching Rules)
    - A modified version of the main simulation with additional **branching rules**.
    - Allows for different cell migration behaviors depending on blood flow and segment population.
 
-### 3. **solve_for_flow.py** (Solves Flow in the Vessel Network)
+### 2. **solve_for_flow.py** (Solves Flow in the Vessel Network)
    - Computes blood flow and pressure distribution in the vessel network.
    - Uses **matrix operations** to solve for nodal pressures and segment flow rates.
 
-### 4. **cell_migration.py** (Handles Endothelial Cell Migration)
+### 3. **cell_migration.py** (Handles Endothelial Cell Migration)
    - Determines how cells move within the network.
    - Migration decisions are based on:
      - Flow direction (e.g., against flow, or along flow)
      - Random movement (i.e., stochastic motion)
      - Persistence of previous movement at last time step
 
-### 5. **realign_polarity.py** (Adjusts Cell Polarity Vectors)
+### 4. **realign_polarity.py** (Adjusts Cell Polarity Vectors)
    - Commands the cells to align their polarity based on **flow direction** and **random influences**.
    - Ensures directional migration patterns.
 
-### 6. **plot_network.py** (Visualizes the Vessel Network)
+### 5. **plot_network.py** (Visualizes the Vessel Network)
    - Creates plots to display the:
      - Vessel structure.
      - Blood pressure and flow distribution.
      - Endothelial cell polarity vectors.
 
-### 7. **make_segments.py** (Creates the Vessel Network Segments)
+### 6. **make_segments.py** (Creates the Vessel Network Segments)
    - Defines the structure of the bifurcating vessel network.
    - Assigns positions to vessel segments.
 
@@ -76,10 +73,7 @@ This model follows an iterative approach based-on time steps where cells (the "a
    ```sh
    pip install numpy matplotlib scipy
    ```
-3. Run the simulation:
-   ```sh
-   python abm_ec_simulation.py
-   ```
+
 
 For an alternative version with enhanced **branching behavior**, run:
    ```sh
